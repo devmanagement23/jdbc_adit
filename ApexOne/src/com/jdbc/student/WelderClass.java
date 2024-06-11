@@ -21,10 +21,14 @@ public class WelderClass {
 		
 		PreparedStatement ps = connection.prepareStatement(sql);
 		
-		ps.setString(1,"RajSingh");
-		ps.setDouble(2,88.5);
-		ps.setString(3, "pune");
-
+		System.out.println("\nEnter name");		
+		ps.setString(1,scanner.nextLine());
+		
+		System.out.println("Enter percentage");
+		ps.setDouble(2,Double.parseDouble(scanner.nextLine()));
+		
+		System.out.println("Enter Address");
+		ps.setString(3,scanner.nextLine());
 		
 		int rows = ps.executeUpdate();
 
