@@ -14,11 +14,17 @@ public class WelderClass {
 	private void insertRecord() throws SQLException {
 		System.out.println("inside insert record function");
 
-		String sql = "insert into student(name,percentage ,address) "
-				                + "values ('Raj',88,'Mumbai')";
+//		String sql = "insert into student(name,percentage ,address) "
+//				                + "values ('Raj',88,'Mumbai')";
 		
-
+		String sql = "insert into student(name,percentage ,address) values (?,?,?)";
+		
 		PreparedStatement ps = connection.prepareStatement(sql);
+		
+		ps.setString(1,"RajSingh");
+		ps.setDouble(2,88.5);
+		ps.setString(3, "pune");
+
 		
 		int rows = ps.executeUpdate();
 
